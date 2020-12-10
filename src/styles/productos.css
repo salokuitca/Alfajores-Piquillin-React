@@ -1,0 +1,11 @@
+.producto {
+    max-width: 400px;
+  }
+
+.producto .cantidad-carrito {
+    width: 40px;
+}
+
+.contenedor-cards {
+    padding-top: 200px;
+}

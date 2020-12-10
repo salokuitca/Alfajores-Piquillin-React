@@ -3,3 +3,15 @@
     width: 45px;
     height: 45px;
   }
+
+  /*Estilos CartWidget*/
+  .cart {
+    width: 40px;
+    padding-top: 5px;
+    padding-left: 5px;
+  }
+  
+  .cart-div:hover {
+    transform: scale(1.15);
+    filter: opacity(0.8);
+  }

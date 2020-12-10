@@ -1,6 +1,6 @@
 import logoMenu from '../../assets/logosolo.svg';
 import '../../styles/navbar.css'
-function NavBar() {
+const NavBar = ({children}) => {
   return (
     <>
     <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light shadow-sm">
@@ -33,6 +33,7 @@ function NavBar() {
                     </li>
                 </ul>
             </div>
+              {children}  
         </div>
     </nav>
     </>
