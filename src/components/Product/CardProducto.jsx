@@ -1,6 +1,19 @@
+import {useState} from 'react';
 import '../../styles/productos.css';
 
 function CardProducto ({imagen, nombre, descripcion}) {
+    const [cantidad, setCantidad] = useState (0);
+
+    const sumar = () => {
+        setCantidad (cantidad + 6);
+    }
+
+    const restar = () => {
+        if (cantidad > 0) {
+        setCantidad (cantidad - 6);
+        }
+    }
+
     return (
     
      <div className="card mb-4 producto">
@@ -11,18 +24,18 @@ function CardProducto ({imagen, nombre, descripcion}) {
                 </div>
                 <div className="btn-toolbar d-flex justify-content-between p-3">
                     <div className="btn-group btn-group-toggle">
-                        <label className="btn btn-light">
-                            <input  className="btn btn-light" type="radio"/>-
-                        </label>
-                        <label className="btn btn-light">
-                            <input type="number" class="cantidad-carrito" id="MARROC"/>
-                        </label>
-                        <label className="btn btn-light">
-                            <input type="radio"/>+
-                        </label>
+                        
+                            <button className="btn btn-secondary" onClick={restar}>-</button>
+
+                        
+                            <input type="number" className="cantidad-carrito btn btn-secondary" value={cantidad} disabled="disabled" id="MARROC"/>
+                        
+                            <button className="btn btn-secondary" onClick={sumar}>+</button>
                     </div>
                     <div>
-                        <button onclick="anotarCompra()" type="button" className="btn btn-group btn-dark" >Agregar al Carrito</button>
+                        <button type="button" className="btn btn-group btn-dark" 
+                            disabled={cantidad === 0 ? 'disabled' : null}
+                        >Agregar al Carrito</button>
                     </div>
                 </div>
             </div> 
