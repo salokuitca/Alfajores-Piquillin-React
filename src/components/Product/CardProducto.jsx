@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import '../../styles/productos.css';
 
-function CardProducto ({imagen, nombre, descripcion}) {
+function CardProducto ({imagen, nombre, descripcion, stock, precio}) {
     const [cantidad, setCantidad] = useState (0);
 
     const sumar = () => {
@@ -21,6 +21,11 @@ function CardProducto ({imagen, nombre, descripcion}) {
                     </div>
                 <div className="align-items-center card-body "> <strong>{nombre}</strong>
                     <p className= "card-text"> {descripcion}</p>
+                    <div className="row d-flex justify-content-around">
+                        <div>Stock : {stock}u</div>
+                        <div className="precio"> ${precio} </div>
+                    </div>
+                    <p className="card-text text-right"></p>
                 </div>
                 <div className="btn-toolbar d-flex justify-content-between p-3">
                     <div className="btn-group btn-group-toggle">
@@ -30,7 +35,9 @@ function CardProducto ({imagen, nombre, descripcion}) {
                         
                             <input type="number" className="cantidad-carrito btn btn-secondary" value={cantidad} disabled="disabled" id="MARROC"/>
                         
-                            <button className="btn btn-secondary" onClick={sumar}>+</button>
+                            <button className="btn btn-secondary" onClick={sumar}
+                                disabled = {cantidad+6 > stock ? 'disabled' : null}
+                            >+</button>
                     </div>
                     <div>
                         <button type="button" className="btn btn-group btn-dark" 

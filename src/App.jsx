@@ -20,10 +20,10 @@ function App() {
     </NavBar>
 
     <ItemListContainer>
-    <CardProducto imagen={ImgDdl} nombre="Alfajor de Dulce de Leche" descripcion="Mini Alfajor de Dulce de leche (~ 30g) ideal para ese bocadito que necesitas sin sentirte culpable"/>
-    <CardProducto imagen={ImgNuez} nombre="Alfajor con nuez" descripcion="Mini Alfajor de Dulce de Leche con nuez"/>
-    <CardProducto imagen={ImgMarroc} nombre="Bombón tipo Marroc" descripcion="Bombon tipo Marroc con dos capas de chocolate con leche y una de mani"/>
-    <CardProducto imagen={ImgNutella} nombre="Bombon de Nutella" descripcion="Exquisito Bombón de chocolate relleno con Nutella"/>
+    <CardProducto imagen={ImgDdl} nombre="Alfajor de Dulce de Leche" descripcion="Mini Alfajor de Dulce de leche (~ 30g) ideal para ese bocadito que necesitas sin sentirte culpable" stock="120" precio="50" />
+    <CardProducto imagen={ImgNuez} nombre="Alfajor con nuez" descripcion="Mini Alfajor de Dulce de Leche con nuez mariposa seleccionada" stock="60" precio="60"/>
+    <CardProducto imagen={ImgMarroc} nombre="Bombón tipo Marroc" descripcion="Bombon tipo Marroc con dos capas de chocolate con leche y una de mani" stock="30" precio="30"/>
+    <CardProducto imagen={ImgNutella} nombre="Bombon de Nutella" descripcion="Exquisito Bombón de chocolate relleno con Nutella" stock="60" precio="35"/>
     </ItemListContainer>
    
     </>
