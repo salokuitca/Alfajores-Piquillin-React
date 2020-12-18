@@ -45,7 +45,7 @@ const ProductosDesdeBaseDeDatos = () => {
     const getProductos = new Promise((resolve,reject) => {
         setTimeout(() => {
             resolve (productosBaseDeDatos);
-        }, 3000)
+        }, 2000)
     })
 
     useEffect(() => {
@@ -57,7 +57,7 @@ const ProductosDesdeBaseDeDatos = () => {
             {
                 items.length ?
                 items.map ((item) => (
-                    <CardProducto
+                    <CardProducto 
                     imagen={item.imagen}
                     nombre={item.nombre}
                     descripcion={item.descripcion}
@@ -66,7 +66,7 @@ const ProductosDesdeBaseDeDatos = () => {
                     />
                 ))
                 :
-                <p>Cargandooooo</p>
+                <p>Cargando Productos...</p>
                 
             }
         </ItemListContainer>
