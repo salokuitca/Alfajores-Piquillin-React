@@ -10,7 +10,7 @@ const ProductosDesdeBaseDeDatos = () => {
     const productosBaseDeDatos = [
         {
             id: 'D',
-            imagen: 'https://dummyimage.com/600x400/000/fff',
+            imagen: 'Ddl.jpeg',
             nombre: 'Alfajor de Dulce de Leche',
             precio: 50,
             descripcion: 'Mini Alfajor de Dulce de leche (~ 30g) ideal para ese bocadito que necesitas sin sentirte culpable',
@@ -18,7 +18,7 @@ const ProductosDesdeBaseDeDatos = () => {
         },
         {
             id: 'Z',
-            imagen: 'https://dummyimage.com/600x400/000/fff',
+            imagen: 'Nuez.jpeg',
             nombre: 'Alfajor con Nuez',
             precio: 60,
             descripcion: 'Mini Alfajor de Dulce de Leche con nuez mariposa seleccionada',
@@ -26,7 +26,7 @@ const ProductosDesdeBaseDeDatos = () => {
         },
         {
             id: 'M',
-            imagen: 'https://dummyimage.com/600x400/000/fff',
+            imagen: 'marroc.jpg',
             nombre: 'Bombón tipo Marroc',
             precio: 30,
             descripcion: 'Bombón tipo Marroc con dos capas de chocolate con leche y una de maní',
@@ -34,7 +34,7 @@ const ProductosDesdeBaseDeDatos = () => {
         },
         {
             id: 'N',
-            imagen: 'https://dummyimage.com/600x400/000/fff',
+            imagen: 'nutella.jpg',
             nombre: 'Bombón con Nutella',
             precio: 35,
             descripcion: 'Exquisito Bombón de chocolate relleno con Nutella',
@@ -52,19 +52,24 @@ const ProductosDesdeBaseDeDatos = () => {
         getProductos.then(rta => setItems(rta));
     }, [])
     return (
+        
         <>
         <ItemListContainer>
             {
                 items.length ?
-                items.map ((item) => (
-                    <CardProducto 
-                    imagen={item.imagen}
+
+                items.map ((item) => {
+                    // const rutaImg = `static/media/${item.imagen}`;
+                    const rutaImg = require (`../../assets/${item.imagen}`);
+                    console.log(rutaImg)
+                    return (<CardProducto key={item.id} 
+                    imagen={rutaImg.default}
                     nombre={item.nombre}
                     descripcion={item.descripcion}
                     precio={item.precio}
                     stock={item.stock}
-                    />
-                ))
+                    />)
+                })
                 :
                 <p>Cargando Productos...</p>
                 
