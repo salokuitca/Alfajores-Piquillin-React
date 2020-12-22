@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import CardProducto from './CardProducto';
 import ItemListContainer from './ItemListContainer';
 import ImgDdl from '../../assets/Ddl.jpeg';
+import ContenedorDetalles from './DetallesProducto/ContenedorDetalles';
 
 const ProductosDesdeBaseDeDatos = () => {
     const [items, setItems] = useState([]);
@@ -59,9 +60,8 @@ const ProductosDesdeBaseDeDatos = () => {
                 items.length ?
 
                 items.map ((item) => {
-                    // const rutaImg = `static/media/${item.imagen}`;
+                    
                     const rutaImg = require (`../../assets/${item.imagen}`);
-                    console.log(rutaImg)
                     return (<CardProducto key={item.id} 
                     imagen={rutaImg.default}
                     nombre={item.nombre}
@@ -74,6 +74,8 @@ const ProductosDesdeBaseDeDatos = () => {
                 <p>Cargando Productos...</p>
                 
             }
+
+          
         </ItemListContainer>
 
         </>
