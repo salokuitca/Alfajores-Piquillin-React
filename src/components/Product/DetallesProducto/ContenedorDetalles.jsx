@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import Detalles from "./Detalles";
+import "../../../styles/detalles.css";
 
 
 
@@ -69,7 +70,7 @@ const ContenedorDetalles = () => {
                     )
                 })
                 :
-                <p>Cargando Productos...</p>
+                <p className="detalles text-center">Cargando Detalle...</p>
                 
             }
             

@@ -9,14 +9,22 @@ import ContenedorDetalles from './components/Product/DetallesProducto/Contenedor
 
 
 function App() {
+  const sectionToShow = (section) => {
+    switch (section) {
+      case 'Home': return <Productos/>;
+      case 'Detalle': return <ContenedorDetalles/>;
+      default: return <Productos/>
+    }
+  }
 
     return (
     <>
     <NavBar>
       <CartWidget/>
     </NavBar>
+    {sectionToShow('Detalle')}
     {/* <Productos/> */}
-    <ContenedorDetalles/>
+    {/* <ContenedorDetalles/> */}
    
     </>
   );
