@@ -63,6 +63,7 @@ const ProductosDesdeBaseDeDatos = () => {
                     
                     const rutaImg = require (`../../assets/${item.imagen}`);
                     return (<CardProducto key={item.id} 
+                    id = {item.id}
                     imagen={rutaImg.default}
                     nombre={item.nombre}
                     descripcion={item.descripcion}

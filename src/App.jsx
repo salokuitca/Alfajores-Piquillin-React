@@ -1,28 +1,46 @@
 
 import NavBar from '../src/components/global/NavBar';
 import CartWidget from '../src/components/global/CartWidget';
-
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Productos from '../src/components/Product/Productos';
 import ContenedorDetalles from './components/Product/DetallesProducto/ContenedorDetalles';
 
 
 
 
+
 function App() {
-  const sectionToShow = (section) => {
-    switch (section) {
-      case 'Home': return <Productos/>;
-      case 'Detalle': return <ContenedorDetalles/>;
-      default: return <Productos/>
-    }
-  }
+
+ 
+  // const sectionToShow = (section) => {
+  //   switch (section) {
+  //     case 'Home': return <Productos/>;
+  //     case 'Detalle': return <ContenedorDetalles/>;
+  //     default: return <Productos/>
+  //   }
+  // }
 
     return (
     <>
+    
+    <BrowserRouter>
     <NavBar>
       <CartWidget/>
     </NavBar>
-    {sectionToShow('Detalle')}
+  <Switch>
+    <Route exact path="/">
+      <Productos />
+    </Route>
+    <Route path="/detalle/:productoid">
+      <ContenedorDetalles />
+    </Route>
+    
+    <Route path="*">
+
+    </Route>
+  </Switch>
+  </BrowserRouter>
+    {/* {sectionToShow('Detalle')} */}
     {/* <Productos/> */}
     {/* <ContenedorDetalles/> */}
    

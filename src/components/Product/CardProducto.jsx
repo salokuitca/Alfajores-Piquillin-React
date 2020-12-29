@@ -1,8 +1,9 @@
 
 import '../../styles/productos.css';
 import BotonesCantidad from './BotonesCantidad';
+import {Link} from 'react-router-dom'
 
-function CardProducto ({imagen, nombre, descripcion, stock, precio}) {
+function CardProducto ({id, imagen, nombre, descripcion, stock, precio}) {
   
 
     return (
@@ -20,6 +21,7 @@ function CardProducto ({imagen, nombre, descripcion, stock, precio}) {
                 </div>
 
                 <BotonesCantidad stock={stock}/>
+                <Link to={`/detalle/${id}`}>Ver más</Link>
                 
             </div> 
     

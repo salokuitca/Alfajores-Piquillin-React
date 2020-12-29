@@ -1,15 +1,19 @@
 import logoMenu from '../../assets/logosolo.svg';
-import '../../styles/navbar.css'
+import '../../styles/navbar.css';
+import {Link} from 'react-router-dom';
 const NavBar = ({children}) => {
   return (
     <>
     <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light shadow-sm">
         <div className="container">
-            <a href="#" className="navbar-brand">
+            <span> <Link to={"/"} className="navbar-brand"> 
+            
                 <img src={logoMenu} alt="Logo con la imagen de un árbol" title="logo-piquillin-menu"
                     className="imagen-menu"/>
                 Alfajores Piquillín
-            </a>
+            
+            </Link>
+            </span>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSuportedContent"
                 aria-controls="navbarSuportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -17,8 +21,11 @@ const NavBar = ({children}) => {
             <div className="collapse navbar-collapse" id="navbarSuportedContent">
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                        <a className="nav-link" href="#productos">Productos</a>
+                        <Link to={"/"} className="nav-link">
+                            Productos
+                        </Link>
                     </li>
+                    {/* Una vez tenga determinadas las categorías, rehacer el navbar y sacar las a por Link */}
                     <li className="nav-item">
                         <a className="nav-link" href="#precios">Precios</a>
                     </li>
