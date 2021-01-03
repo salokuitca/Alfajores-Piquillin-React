@@ -4,7 +4,7 @@ import CartWidget from '../src/components/global/CartWidget';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Productos from '../src/components/Product/Productos';
 import ContenedorDetalles from './components/Product/DetallesProducto/ContenedorDetalles';
-
+import Cart from '../src/components/global/Cart';
 
 
 
@@ -33,6 +33,9 @@ function App() {
     </Route>
     <Route path="/detalle/:productoid">
       <ContenedorDetalles />
+    </Route>
+    <Route path="/cart">
+      <Cart />
     </Route>
     
     <Route path="*">

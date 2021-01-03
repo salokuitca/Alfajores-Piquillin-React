@@ -1,7 +1,9 @@
 import {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 
 const BotonesCantidad = ({stock}) => {
     const [cantidad, setCantidad] = useState (0);
+    const history = useHistory();
 
     const sumar = () => {
         setCantidad (cantidad + 6);
@@ -11,6 +13,10 @@ const BotonesCantidad = ({stock}) => {
         if (cantidad > 0) {
         setCantidad (cantidad - 6);
         }
+    }
+    
+    const redireccionar = () => {
+        history.push("/cart")
     }
     return (
         <>
@@ -27,7 +33,7 @@ const BotonesCantidad = ({stock}) => {
                             >+</button>
                     </div>
                     <div>
-                        <button type="button" className="btn btn-group btn-dark" 
+                        <button type="button" className="btn btn-group btn-dark" onClick={redireccionar} 
                             disabled={cantidad === 0 ? 'disabled' : null}
                         >Agregar al Carrito</button>
                     </div>

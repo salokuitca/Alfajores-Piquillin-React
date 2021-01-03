@@ -1,6 +1,7 @@
 import logoMenu from '../../assets/logosolo.svg';
 import '../../styles/navbar.css';
 import {Link} from 'react-router-dom';
+
 const NavBar = ({children}) => {
   return (
     <>
