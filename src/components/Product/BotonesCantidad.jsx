@@ -1,7 +1,10 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import {useHistory} from 'react-router-dom';
+import {Store} from '../../store';
 
-const BotonesCantidad = ({stock}) => {
+const BotonesCantidad = ({item}) => {
+    const [data, setData] = useContext(Store);
+
     const [cantidad, setCantidad] = useState (0);
     const history = useHistory();
 
@@ -16,7 +19,30 @@ const BotonesCantidad = ({stock}) => {
     }
     
     const redireccionar = () => {
-        history.push("/cart")
+        item.cantidadUsuario = cantidad;
+        const idComprobar = item.id;
+        let verificar = false;
+        data.items.forEach ((item) => {
+            if (idComprobar === item.id) {
+                item.cantidadUsuario = item.cantidadUsuario + cantidad;
+                setData ({
+                    ...data, 
+                    cantidadTotal: data.cantidadTotal + cantidad,
+                })
+                verificar = true;
+            }
+        })
+        if (verificar == false) {
+            setData ({
+
+                ...data, 
+                cantidadTotal: data.cantidadTotal + cantidad,
+                items: [...data.items, item],
+            })
+        }
+        
+        history.push("/cart");
+        console.log(data);
     }
     return (
         <>
@@ -29,7 +55,7 @@ const BotonesCantidad = ({stock}) => {
                             <input type="number" className="cantidad-carrito btn btn-secondary" value={cantidad} disabled="disabled" id="MARROC"/>
                         
                             <button className="btn btn-secondary" onClick={sumar}
-                                disabled = {cantidad+6 > stock ? 'disabled' : null}
+                                // disabled = {cantidad+6 > item.stock ? 'disabled' : null}
                             >+</button>
                     </div>
                     <div>

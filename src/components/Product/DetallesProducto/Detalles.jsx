@@ -8,8 +8,8 @@ import X24 from "../../../assets/x24.jpg";
 const Detalles = ({producto}) => {
     const detalle = producto[0];
     const rutaImg = require (`../../../assets/${detalle.imagen}`);
-    console.log (rutaImg)
-    console.log (detalle)
+    // console.log (rutaImg)
+    // console.log (detalle)
     
     return (
         
@@ -26,7 +26,7 @@ const Detalles = ({producto}) => {
                 </div>
                 
                 <div className="py-5">
-                <BotonesCantidad stock={detalle.stock}/>
+                <BotonesCantidad item={detalle}/>
                 </div>
                 
             </div>
