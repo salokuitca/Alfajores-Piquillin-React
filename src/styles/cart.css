@@ -1,3 +1,16 @@
+
 .carrito {
     padding: 100px
 }
+
+.carrito-vacio {
+    margin-top: 100px;
+  }
+  
+  .carrito-vacio div {
+    font-size: x-large;
+  }
+  
+  .carrito-vacio img {
+    width: 50%;
+  }

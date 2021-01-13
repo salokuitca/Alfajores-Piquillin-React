@@ -65,7 +65,8 @@ const ContenedorDetalles = () => {
     return (
         
         productos.length>0 ? (
-            <Detalles producto={productos}/>
+            <Detalles key={productos.id}
+            producto={productos}/>
         ) : (
             <p className="detalles text-center">Cargando Detalle...</p>
         )
