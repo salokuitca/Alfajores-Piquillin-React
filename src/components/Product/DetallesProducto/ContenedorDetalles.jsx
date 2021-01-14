@@ -18,6 +18,7 @@ const ContenedorDetalles = () => {
             precio: 50,
             descripcion: 'Mini Alfajor de Dulce de leche (~ 30g) ideal para ese bocadito que necesitas sin sentirte culpable',
             stock: 120,
+            cantidadUsuario: 0,
         },
         {
              id: 'Z',
@@ -26,6 +27,7 @@ const ContenedorDetalles = () => {
              precio: 60,
              descripcion: 'Mini Alfajor de Dulce de Leche con nuez mariposa seleccionada',
             stock: 60,
+            cantidadUsuario: 0,
          },
          {
              id: 'M',
@@ -34,6 +36,7 @@ const ContenedorDetalles = () => {
              precio: 30,
              descripcion: 'Bombón tipo Marroc con dos capas de chocolate con leche y una de maní',
              stock: 30,
+             cantidadUsuario: 0,
          },
          {
              id: 'N',
@@ -42,6 +45,7 @@ const ContenedorDetalles = () => {
              precio: 35,
              descripcion: 'Exquisito Bombón de chocolate relleno con Nutella',
             stock: 120,
+            cantidadUsuario: 0,
          },
     ]
 

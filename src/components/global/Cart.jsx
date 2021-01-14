@@ -8,19 +8,25 @@ import {useHistory} from 'react-router-dom';
 const Cart = () => {
     const [data, setData] = useContext(Store);
     const history = useHistory();
-    //El error que me salta me dice que no lee item.id y no se por qué.
-    // const eliminar = () => {
-    //     const idComprobar = item.id;
+
+     const eliminar = (id) => {
+         
         
-    //     const filtro = data.items.filter ((product) => {
-    //         return product.id !=idComprobar
-    //     })
-    //     setData ({
-    //     ...data, 
-    //     items: [filtro]
-    //     })
-    //     console.log ("Eliminado" + data)
-    // }
+         const filtro = data.items.filter ((product) => {
+             
+             return product.id !== id
+         })
+
+         let actualizarCantidad = 0;
+         filtro.forEach ( (item) => {
+             actualizarCantidad = actualizarCantidad + item.cantidadUsuario;
+         })
+         setData ({
+         cantidadTotal: actualizarCantidad, 
+         items: filtro
+         })
+         console.log (data)
+     }
 
     const eliminarTodo = () => {
         setData ({
@@ -62,7 +68,7 @@ const Cart = () => {
                     </div>
                 </div>
                 <div class="col-2"><button class="btn btn-danger btn-sm" 
-                // onClick={eliminar} Lo puse así para poder comentarlo hasta que lo pueda solucionar
+                onClick={ () => eliminar(item.id)}
                 >✖</button></div>
                 </div>
                 
