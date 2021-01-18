@@ -7,6 +7,7 @@ import Productos from '../src/components/Product/Productos';
 import ContenedorDetalles from './components/Product/DetallesProducto/ContenedorDetalles';
 import Cart from '../src/components/global/Cart';
 import {Store} from './store';
+import CategoriasContenedor from './components/Categorias/CategoriasContenedor';
 
 
 
@@ -28,11 +29,14 @@ function App() {
           <Route exact path="/">
             <Productos />
           </Route>
+          <Route exact path="/cart">
+            <Cart />
+          </Route>
+          <Route exact path="/:categoria">
+            <CategoriasContenedor/>
+          </Route>
           <Route path="/detalle/:productoid">
             <ContenedorDetalles />
-          </Route>
-          <Route path="/cart">
-            <Cart />
           </Route>
       
           <Route path="*">

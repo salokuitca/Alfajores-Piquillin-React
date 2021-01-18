@@ -28,16 +28,16 @@ const NavBar = ({children}) => {
                     </li>
                     {/* Una vez tenga determinadas las categorías, rehacer el navbar y sacar las a por Link */}
                     <li className="nav-item">
-                        <a className="nav-link" href="#precios">Precios</a>
+                        <Link to={"/Alfajor"} className="nav-link" >Alfajores</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#pedido">Pedidos</a>
+                        <Link to={"/Bombon"} className="nav-link">Bombones</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#envios">Envíos</a>
+                        <Link to={"/Chocolate"} className="nav-link">Chocolates</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#contacto">Contacto</a>
+                        <Link to={"/Pasteleria"}className="nav-link">Pasteleria</Link>
                     </li>
                 </ul>
             </div>

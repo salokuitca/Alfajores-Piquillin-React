@@ -36,6 +36,10 @@ const Cart = () => {
         console.log (data)
     }
 
+    const elegirEnvio = () => {
+        
+    }
+
     const redireccionar = () => {
         history.push("/")
     }
@@ -56,8 +60,8 @@ const Cart = () => {
             {
                 data.items.map(item => 
                 <>
-                <div className="row border-bottom d-flex align-items-center py-2 mx-1 rounded-lg shadow-sm">
-                    <div className="col-3"><img src= "https://dummyimage.com/150x100/000/fff" className=" img-pdto-encarrito img-fluid"/></div>
+                <div className="row border-bottom d-flex align-items-center py-2 mx-1 rounded-lg shadow-sm" >
+                    <div className="col-3"><img src= {item.imagen} className=" img-pdto-encarrito img-fluid"/></div>
                 <div className="col-7 d-flex justify-content-around flex-wrap">
                     <div className="col-sm descripcion-pdto-encarrito">{item.nombre}</div>
                     <div className="col-sm">
@@ -83,7 +87,7 @@ const Cart = () => {
             <div className="row border-bottom d-flex align-items-center mx-1 rounded-lg shadow-sm py-3 bg-light">
                 <div className="col-7 lugar-de-envio d-flex justify-content-around flex-wrap  ">
                     <div className="pb-1"> Seleccione Lugar de Envío</div>
-                    <select name="" id="lugarDeEnvio" onchange="elegirEnvio()" className="rounded" required>
+                    <select name="" id="lugarDeEnvio" onChange={elegirEnvio()} className="rounded" required>
                         
                         <option value="80" id="VGB">Villa Gral Belgrano</option>
                         <option value="50" id="VR">Villa Rumipal</option>

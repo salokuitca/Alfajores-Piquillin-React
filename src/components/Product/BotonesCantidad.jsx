@@ -9,12 +9,12 @@ const BotonesCantidad = ({item}) => {
     const history = useHistory();
 
     const sumar = () => {
-        setCantidad (cantidad + 6);
+        setCantidad (cantidad + 1);
     }
 
     const restar = () => {
         if (cantidad > 0) {
-        setCantidad (cantidad - 6);
+        setCantidad (cantidad - 1);
         }
     }
     

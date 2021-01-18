@@ -6,27 +6,25 @@ import X24 from "../../../assets/x24.jpg";
 
 
 const Detalles = ({producto}) => {
-    const detalle = producto[0];
-    const rutaImg = require (`../../../assets/${detalle.imagen}`);
+    // const rutaImg = require (`../../../assets/${producto.imagen}`);
     // console.log (rutaImg)
-    // console.log (detalle)
     
     return (
         
         <div className="container">
         <div className=" row detalles">
         
-            <div className="col-6"><img src={rutaImg.default} alt={detalle.descripcion} className="img-fluid"/></div>
+            <div className="col-6"><img src={producto.imagen} alt={producto.descripcion} className="img-fluid"/></div>
             <div className="col-6">
-                <h1>{detalle.nombre}</h1>
-                <p className="py-3">{detalle.descripcion}</p>
+                <h1>{producto.nombre}</h1>
+                <p className="py-3">{producto.descripcion}</p>
                 <div className="row d-flex justify-content-around py-3">
-                <div>Precio: ${detalle.precio}</div>
-                <div>Stock: {detalle.stock}</div>
+                <div>Precio: ${producto.precio}</div>
+                <div>Stock: {producto.stock}</div>
                 </div>
                 
                 <div className="py-5">
-                <BotonesCantidad item={detalle}/>
+                <BotonesCantidad item={producto}/>
                 </div>
                 
             </div>
