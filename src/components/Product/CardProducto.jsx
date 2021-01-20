@@ -20,7 +20,7 @@ function CardProducto ({producto, id}) {
                     <p className="card-text text-right"></p>
                 </div>
 
-                <BotonesCantidad item={producto}/>
+                <BotonesCantidad item={producto} id={id}/>
                 <Link to={`/detalle/${id}`}>Ver más</Link>
                 
             </div> 

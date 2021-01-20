@@ -6,8 +6,10 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Productos from '../src/components/Product/Productos';
 import ContenedorDetalles from './components/Product/DetallesProducto/ContenedorDetalles';
 import Cart from '../src/components/global/Cart';
+import Checkout from '../src/components/Checkout/Checkout';
 import {Store} from './store';
 import CategoriasContenedor from './components/Categorias/CategoriasContenedor';
+
 
 
 
@@ -16,6 +18,7 @@ function App() {
   const [data, setData] = useState({
     items: [],
     cantidadTotal:0,
+    
   })
 
     return (
@@ -31,6 +34,9 @@ function App() {
           </Route>
           <Route exact path="/cart">
             <Cart />
+          </Route>
+          <Route exact path="/checkout">
+            <Checkout/>
           </Route>
           <Route exact path="/:categoria">
             <CategoriasContenedor/>

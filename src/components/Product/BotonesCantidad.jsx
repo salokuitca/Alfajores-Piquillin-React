@@ -2,11 +2,13 @@ import {useState, useContext} from 'react';
 import {useHistory} from 'react-router-dom';
 import {Store} from '../../store';
 
-const BotonesCantidad = ({item}) => {
+const BotonesCantidad = ({item, id}) => {
     const [data, setData] = useContext(Store);
 
     const [cantidad, setCantidad] = useState (0);
     const history = useHistory();
+
+    console.log (data)
 
     const sumar = () => {
         setCantidad (cantidad + 1);
@@ -20,10 +22,14 @@ const BotonesCantidad = ({item}) => {
     
     const redireccionar = () => {
         item.cantidadUsuario = cantidad;
-        const idComprobar = item.id;
+        console.log (item.cantidadUsuario);
+        const nombreComprobar = item.nombre;
+        console.log (nombreComprobar)
+        
         let verificar = false;
         data.items.forEach ((item) => {
-            if (idComprobar === item.id) {
+            console.log ("nombreComprobar" + nombreComprobar, "item.nombre" + item.nombre)
+            if (nombreComprobar === item.nombre) {
                 item.cantidadUsuario = item.cantidadUsuario + cantidad;
                 setData ({
                     ...data, 
@@ -32,7 +38,7 @@ const BotonesCantidad = ({item}) => {
                 verificar = true;
             }
         })
-        if (verificar == false) {
+        if (verificar === false) {
             setData ({
 
                 ...data, 
@@ -42,7 +48,7 @@ const BotonesCantidad = ({item}) => {
         }
         
         history.push("/cart");
-        console.log(data);
+        console.log("DATA"+data);
     }
     return (
         <>

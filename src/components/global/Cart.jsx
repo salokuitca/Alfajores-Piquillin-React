@@ -2,19 +2,20 @@ import {useContext} from 'react';
 import "../../styles/cart.css";
 import CartVacio from './CartVacio';
 import {Store} from '../../store';
-import {useHistory} from 'react-router-dom';
+import {useHistory, Link} from 'react-router-dom';
+
 
 
 const Cart = () => {
     const [data, setData] = useContext(Store);
     const history = useHistory();
 
-     const eliminar = (id) => {
+     const eliminar = (nombre) => {
          
         
          const filtro = data.items.filter ((product) => {
              
-             return product.id !== id
+             return product.nombre !== nombre
          })
 
          let actualizarCantidad = 0;
@@ -47,7 +48,7 @@ const Cart = () => {
     data.items.forEach((item) => {
         precioTotal = precioTotal + (item.cantidadUsuario * item.precio);
     })
-
+    
 
     return (
         <>
@@ -72,7 +73,7 @@ const Cart = () => {
                     </div>
                 </div>
                 <div class="col-2"><button class="btn btn-danger btn-sm" 
-                onClick={ () => eliminar(item.id)}
+                onClick={ () => eliminar(item.nombre)}
                 >✖</button></div>
                 </div>
                 
@@ -113,8 +114,8 @@ const Cart = () => {
                 <button onClick={eliminarTodo} className="btn btn-lg btn-block btn-light shadow-sm rounded-pill m-2">Eliminar</button>
                 </div>
                 <div className="col-sm-12 col-md-6 text-right">
-                    <button className="btn btn-lg btn-block btn-warning text-uppercase shadow-sm rounded-pill pagar m-2"
-                    data-toggle="modal" data-target="#staticBackdrop" onclick="resumenCompra()">comprar</button>
+                   <Link to={"/checkout"}><button className="btn btn-lg btn-block btn-warning text-uppercase shadow-sm rounded-pill pagar m-2"
+                    data-toggle="modal" data-target="#staticBackdrop">comprar</button></Link> 
                 </div>
             </div>
         

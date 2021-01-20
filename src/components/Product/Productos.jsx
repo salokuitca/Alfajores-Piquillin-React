@@ -15,7 +15,7 @@ const ProductosDesdeBaseDeDatos = () => {
             docs.forEach(doc => {
                 arr.push({id: doc.id, data: doc.data()}) //el data trae por documento
             })
-
+            console.log (arr)
             setItems (arr);
         })
         .catch (e => console.log(e))
