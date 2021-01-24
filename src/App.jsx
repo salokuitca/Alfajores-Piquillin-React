@@ -9,6 +9,7 @@ import Cart from '../src/components/global/Cart';
 import Checkout from '../src/components/Checkout/Checkout';
 import {Store} from './store';
 import CategoriasContenedor from './components/Categorias/CategoriasContenedor';
+import Footer from './components/global/Footer';
 
 
 
@@ -49,6 +50,7 @@ function App() {
 
           </Route>
         </Switch>
+        {/* <Footer/> */}
       </BrowserRouter>
     </Store.Provider>
     </>

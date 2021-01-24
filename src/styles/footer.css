@@ -1,0 +1,12 @@
+footer {
+    height: 30px;
+    background-color: #c4c4c4;
+    position: sticky;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100;
+  }
+  footer a img {
+    height: 20px;
+  }

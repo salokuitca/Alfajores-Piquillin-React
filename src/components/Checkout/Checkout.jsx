@@ -9,6 +9,8 @@ const Checkout = () => {
     const db = getFirestore();
     const [idCompra, setIdCompra] = useState();
     const [data, setData] = useContext(Store);
+    const [error, setError] = useState(false);
+    const [verificar, setVerificar] = useState (true);
     const [formData, setFormData] = useState ({
         nombre: '',
         apellido: '',
@@ -35,11 +37,16 @@ const Checkout = () => {
         precioTotal: precioTotal,
         fecha: firebase.firestore.Timestamp.fromDate(new Date()),
     }
-    let verificar = true;
+    
     const handleSubmitForm = (e) => {
-        verificar = false;
-        console.log (verificar)
+        
+        setVerificar (false)
         e.preventDefault()
+        // if([nombre,apellido,email,telefono].includes(''))
+        //  { setError(true); 
+        //     return; 
+        // }
+        setError(false)
         db.collection('ventas').add(compra)
         .then (({id}) => {
             console.log (id);
@@ -112,7 +119,7 @@ const Checkout = () => {
                 </div>
             </div>
 
-            <button className="btn btn-lg btn-block btn-success text-uppercase shadow-sm rounded-pill m-2">Pagar</button>
+            <button type="submit" className="btn btn-lg btn-block btn-success text-uppercase shadow-sm rounded-pill m-2">Pagar</button>
             </form>
         </div>
         : 
