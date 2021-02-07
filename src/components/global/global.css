@@ -1,4 +1,14 @@
-footer {
+/*Estilos menu*/
+.imagen-menu {
+    width: 45px;
+    height: 45px;
+  }
+
+  .error {
+    margin-top: 200px;
+  }
+ 
+  footer {
     height: 30px;
     background-color: #c4c4c4;
     position: sticky;

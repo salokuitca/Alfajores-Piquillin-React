@@ -1,0 +1,44 @@
+
+.carrito {
+    padding: 100px
+}
+
+.carrito-vacio {
+    margin-top: 100px;
+  }
+  
+  .carrito-vacio div {
+    font-size: x-large;
+  }
+  
+  .carrito-vacio img {
+    width: 50%;
+  }
+
+   /*Estilos CartWidget*/
+   .cart {
+    width: 40px;
+    padding-top: 5px;
+    padding-left: 5px;
+  }
+  
+  .cart-div:hover {
+    transform: scale(1.15);
+    filter: opacity(0.8);
+  }
+
+  .cerrado {
+    display: none;
+  }
+
+  
+
+  .abierto {
+    z-index: 9999;
+    width: 30%;
+    height: 80%;
+    margin-top: 100px;
+    position: fixed;
+    top:-5%;
+    background-color: rgb(216, 215, 215);
+  }

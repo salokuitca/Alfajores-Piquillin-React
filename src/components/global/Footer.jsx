@@ -1,13 +1,13 @@
 import github from '../../assets/github.svg';
 import linkedin from '../../assets/linkedin.svg';
 import gmail from '../../assets/gmail-footer.svg';
-import '../../styles/footer.css';
+import './global.css';
 const Footer = () => {
     return (
         <>
-        <div>
-        <footer class="d-flex justify-content-around">
-        <p class="text-right">@2020 by Salomé Kuitca</p>
+        {/* <div>
+        <footer className="d-flex justify-content-around">
+        <p className="text-right">@2020 by Salomé Kuitca</p>
         <div>
             <a href="https://github.com/salokuitca" target="_blank"><img src={github} alt="logo de github"
                     title="logo-github"/></a>
@@ -18,7 +18,7 @@ const Footer = () => {
         </div>
 
     </footer>
-        </div>
+        </div> */}
         </>
     )
 }

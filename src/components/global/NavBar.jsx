@@ -1,8 +1,29 @@
-import logoMenu from '../../assets/logosolo.svg';
-import '../../styles/navbar.css';
+import {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
+import iconoCarrito from '../../assets/cart.svg';
+// import {getFirestore} from '../../db';
+import {Store} from "../../store";
+import logoMenu from '../../assets/logosolo.svg';
 
-const NavBar = ({children}) => {
+import CartWidget from '../Cart/CartWidget';
+import './global.css'
+
+const NavBar = () => {
+    const [data] = useContext(Store); //Antes tenia tambien un setData pero me parece que no hace falta VER
+    
+    const [show, setShow] = useState(false)
+    const [clase, setClase] = useState ("")
+
+  
+    const mostrar = () => {
+        setShow (!show)
+        if (show) {
+            setClase("abierto")
+        } else{
+            setClase("cerrado")
+        }
+    }
+   
   return (
     <>
     <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light shadow-sm">
@@ -41,9 +62,18 @@ const NavBar = ({children}) => {
                     </li>
                 </ul>
             </div>
-              {children}  
+            <div className="cart-div">
+                <span><img src={iconoCarrito} alt="icono carrito" className="cart" onClick={mostrar}/></span>
+                {/* Por el momento aparecera 0 pero luego sera reemplazado por un contador de productos elegidos */}
+                <span className="badge badge-pill badge-dark" >{data.cantidadTotal}</span>
+            </div>
         </div>
     </nav>
+            <div className="container d-flex justify-content-end">
+
+            
+              <CartWidget clase={clase}/> 
+              </div>
     </>
   );
 }

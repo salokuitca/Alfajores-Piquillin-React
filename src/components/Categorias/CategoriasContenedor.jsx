@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
-import "../../styles/categoria.css";
-import CardProducto from '../Product/CardProducto';
-import ItemListContainer from '../Product/ItemListContainer'
 import {useParams} from 'react-router-dom';
 import {getFirestore} from '../../db';
+
+import CardProducto from '../Product/CardProducto';
+import ItemListContainer from '../Product/ItemListContainer'
+
+import "./categoria.css";
 
 
 const CategoriasContenedor = () => {

@@ -1,15 +1,16 @@
-
 import {useState} from 'react';
-import NavBar from '../src/components/global/NavBar';
-import CartWidget from '../src/components/global/CartWidget';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import Productos from '../src/components/Product/Productos';
-import ContenedorDetalles from './components/Product/DetallesProducto/ContenedorDetalles';
-import Cart from '../src/components/global/Cart';
-import Checkout from '../src/components/Checkout/Checkout';
 import {Store} from './store';
+
+import NavBar from '../src/components/global/NavBar';
+
+import ContenedorCardsProductos from './components/Product/ContenedorCardsProductosDestacados';
+import ContenedorDetalles from './components/Product/DetallesProducto/ContenedorDetalles';
+import Cart from './components/Cart/Cart';
+import Checkout from '../src/components/Checkout/Checkout';
 import CategoriasContenedor from './components/Categorias/CategoriasContenedor';
-import Footer from './components/global/Footer';
+import Error404 from './components/global/Error404';
+// import Footer from './components/global/Footer';
 
 
 
@@ -26,12 +27,11 @@ function App() {
     <>
     <Store.Provider value={[data, setData]}>
       <BrowserRouter>
-        <NavBar>
-          <CartWidget/>
-        </NavBar>
+        <NavBar/>
+          
         <Switch>
           <Route exact path="/">
-            <Productos />
+            <ContenedorCardsProductos />
           </Route>
           <Route exact path="/cart">
             <Cart />
@@ -42,12 +42,13 @@ function App() {
           <Route exact path="/:categoria">
             <CategoriasContenedor/>
           </Route>
-          <Route path="/detalle/:productoid">
+          <Route exact path="/detalle/:productoid">
             <ContenedorDetalles />
           </Route>
       
           <Route path="*">
-
+                <Error404/> 
+                {/* VER BIEN QUE ME SALTE CUANDO ES UNA RUTA INCORRECTA  */}
           </Route>
         </Switch>
         {/* <Footer/> */}

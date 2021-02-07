@@ -1,9 +1,11 @@
-import {useState, useContext, useEffect} from 'react';
+import {useState, useContext} from 'react';
 import {Store} from '../../store';
-import "../../styles/checkout.css";
 import {getFirestore} from '../../db';
+
 import firebase from 'firebase/app'
 import CompraProcesada from './CompraProcesada';
+
+import "./checkout.css";
 
 const Checkout = () => {
     const db = getFirestore();
@@ -30,7 +32,7 @@ const Checkout = () => {
     let precioTotal=0;
     data.items.forEach((item) => {
         precioTotal = precioTotal + (item.cantidadUsuario * item.precio);
-    })
+    }) //FALTARIA EL ENVIO AHORA!
     const compra = {
         usuario: formData,
         items: data.items,

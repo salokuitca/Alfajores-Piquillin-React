@@ -1,8 +1,10 @@
 import {useState, useEffect} from 'react';
-import Detalles from "./Detalles";
-import "../../../styles/detalles.css";
 import {useParams} from 'react-router-dom';
 import {getFirestore} from '../../../db';
+
+import Detalles from "./Detalles";
+
+import "../productos.css";
 
 
 const ContenedorDetalles = () => {
@@ -21,7 +23,7 @@ const ContenedorDetalles = () => {
             }
         })
         .catch (e => console.log (e))
-    }, [])
+    }, [db, productoid])
     
     return (
         

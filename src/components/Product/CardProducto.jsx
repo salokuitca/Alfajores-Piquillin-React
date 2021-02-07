@@ -1,7 +1,9 @@
 
-import '../../styles/productos.css';
-import BotonesCantidad from './BotonesCantidad';
 import {Link} from 'react-router-dom'
+
+import BotonesCantidad from './BotonesCantidad';
+
+import './productos.css';
 
 function CardProducto ({producto, id}) {
   

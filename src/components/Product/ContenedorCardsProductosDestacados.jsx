@@ -1,7 +1,10 @@
 import {useState, useEffect} from 'react';
+import {getFirestore} from '../../db';
+
 import CardProducto from './CardProducto';
 import ItemListContainer from './ItemListContainer';
-import {getFirestore} from '../../db';
+
+import './productos.css';
 
 const ProductosDesdeBaseDeDatos = () => {
     const [items, setItems] = useState([]);
@@ -15,7 +18,7 @@ const ProductosDesdeBaseDeDatos = () => {
             docs.forEach(doc => {
                 arr.push({id: doc.id, data: doc.data()}) //el data trae por documento
             })
-            console.log (arr)
+            
             setItems (arr);
         })
         .catch (e => console.log(e))
@@ -25,14 +28,22 @@ const ProductosDesdeBaseDeDatos = () => {
         
         getProductsFromDB();
     }, [])
+    
+    const filtro = items.filter ((product) => {
+        
+        return product.data.destacado === true;
+    })
+    
     return (
         
         <>
+
+        <div className="productos-destacados d-flex justify-content-center">PRODUCTOS DESTACADOS</div>
         <ItemListContainer>
             {
-                items.length ?
+                filtro.length ?
 
-                items.map ((item) => {
+                filtro.map ((item) => {
                     
                     
                     return (<CardProducto key={item.id} 

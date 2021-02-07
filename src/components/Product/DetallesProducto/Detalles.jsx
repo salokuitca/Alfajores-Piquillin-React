@@ -1,13 +1,12 @@
-import "../../../styles/detalles.css";
 import BotonesCantidad from "../BotonesCantidad";
 import X6 from "../../../assets/x6.jpg";
 import X12 from "../../../assets/x12.jpg";
 import X24 from "../../../assets/x24.jpg";
 
+import "../productos.css";
 
 const Detalles = ({producto}) => {
-    // const rutaImg = require (`../../../assets/${producto.imagen}`);
-    // console.log (rutaImg)
+    
     
     return (
         
@@ -34,14 +33,14 @@ const Detalles = ({producto}) => {
            <h3 className="text-center">Presentaciones disponibles</h3>
            <div className="row d-flex justify-content-between">
                 <div className="card" style={{width: "15rem"}}>
-                    <img src={X6} class="card-img-top" alt="..."/>
+                    <img src={X6} className="card-img-top" alt="..."/>
                     <div className="card-body">
                          <p className="card-text">Excelente para quedar bien con alguien que no querés tanto como a tu mamá</p>
                     </div>
                 </div>
 
                 <div className="card" style={{width: "15rem"}}>
-                    <img src={X12} class="card-img-top" alt="..."/>
+                    <img src={X12} className="card-img-top" alt="..."/>
                     <div className="card-body">
                          <p className="card-text">Ideal para un cumpleaños, "dia del [...]", o para tenerlos escondidos y no compartirlos con
                         nadie</p>
@@ -49,7 +48,7 @@ const Detalles = ({producto}) => {
                 </div>
 
                 <div className="card" style={{width: "15rem"}}>
-                    <img src={X24} class="card-img-top" alt="..."/>
+                    <img src={X24} className="card-img-top" alt="..."/>
                     <div className="card-body">
                          <p className="card-text">Si caés con esta caja, garantizamos eterna gratitud del receptor, o te devolvemos tu dinero</p>
                     </div>

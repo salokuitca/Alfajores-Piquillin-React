@@ -1,4 +1,4 @@
-import '../../styles/productos.css';
+import './productos.css';
 
 const ItemListContainer = ({children}) => {
     return (

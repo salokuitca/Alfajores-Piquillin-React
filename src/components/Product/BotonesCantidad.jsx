@@ -1,14 +1,14 @@
 import {useState, useContext} from 'react';
-import {useHistory} from 'react-router-dom';
+// import {useHistory} from 'react-router-dom';
 import {Store} from '../../store';
 
 const BotonesCantidad = ({item, id}) => {
     const [data, setData] = useContext(Store);
 
     const [cantidad, setCantidad] = useState (0);
-    const history = useHistory();
+    // const history = useHistory();
 
-    console.log (data)
+    
 
     const sumar = () => {
         setCantidad (cantidad + 1);
@@ -20,15 +20,17 @@ const BotonesCantidad = ({item, id}) => {
         }
     }
     
-    const redireccionar = () => {
+    const agregarAlCart = () => {
+        
+        // AGREGAR ANIMACION PARA QUE SE NOTE QUE SE AGREGO ALGO AL CART
         item.cantidadUsuario = cantidad;
-        console.log (item.cantidadUsuario);
+        
         const nombreComprobar = item.nombre;
-        console.log (nombreComprobar)
+        
         
         let verificar = false;
         data.items.forEach ((item) => {
-            console.log ("nombreComprobar" + nombreComprobar, "item.nombre" + item.nombre)
+            
             if (nombreComprobar === item.nombre) {
                 item.cantidadUsuario = item.cantidadUsuario + cantidad;
                 setData ({
@@ -47,8 +49,8 @@ const BotonesCantidad = ({item, id}) => {
             })
         }
         
-        history.push("/cart");
-        console.log("DATA"+data);
+        // history.push("/cart");
+        
     }
     return (
         <>
@@ -58,14 +60,14 @@ const BotonesCantidad = ({item, id}) => {
                             <button className="btn btn-secondary" onClick={restar}>-</button>
 
                         
-                            <input type="number" className="cantidad-carrito btn btn-secondary" value={cantidad} disabled="disabled" id="MARROC"/>
+                            <input type="number" className="cantidad-carrito btn btn-secondary" value={cantidad} disabled="disabled"/>
                         
                             <button className="btn btn-secondary" onClick={sumar}
-                                // disabled = {cantidad+6 > item.stock ? 'disabled' : null}
+                                disabled = {cantidad+1 > item.stock ? 'disabled' : null}
                             >+</button>
                     </div>
                     <div>
-                        <button type="button" className="btn btn-group btn-dark" onClick={redireccionar} 
+                        <button type="button" className="btn btn-group btn-dark" onClick={agregarAlCart} 
                             disabled={cantidad === 0 ? 'disabled' : null}
                         >Agregar al Carrito</button>
                     </div>
