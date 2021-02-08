@@ -3,7 +3,7 @@
 Es un e-commerce para un emprendimiento local de venta de alfajores, bombones y delicatessen.
 
 ## Links
-ACA VA EL LINK DE LA PAGINA SUBIDA
+[https://alfajores-piquillin-react.vercel.app/]
 
 ## Organización del código
 Los componentes están organizados por carpetas correspondiendo a la parte del programa que responden. En ese sentido, se encuentran divididos en 5 grandes grupos (Cart, Categorías, Checkout, global, Product), cada uno de estos contiene:
