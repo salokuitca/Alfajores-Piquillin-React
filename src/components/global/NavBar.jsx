@@ -12,16 +12,11 @@ const NavBar = () => {
     const [data] = useContext(Store); //Antes tenia tambien un setData pero me parece que no hace falta VER
     
     const [show, setShow] = useState(false)
-    const [clase, setClase] = useState ("")
+    
 
   
     const mostrar = () => {
         setShow (!show)
-        if (show) {
-            setClase("abierto")
-        } else{
-            setClase("cerrado")
-        }
     }
    
   return (
@@ -72,7 +67,7 @@ const NavBar = () => {
             <div className="container d-flex justify-content-end">
 
             
-              <CartWidget clase={clase}/> 
+              <CartWidget clase={show}/> 
               </div>
     </>
   );

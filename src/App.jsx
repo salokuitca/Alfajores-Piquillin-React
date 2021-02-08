@@ -10,7 +10,7 @@ import Cart from './components/Cart/Cart';
 import Checkout from '../src/components/Checkout/Checkout';
 import CategoriasContenedor from './components/Categorias/CategoriasContenedor';
 import Error404 from './components/global/Error404';
-// import Footer from './components/global/Footer';
+
 
 
 
@@ -20,7 +20,8 @@ function App() {
   const [data, setData] = useState({
     items: [],
     cantidadTotal:0,
-    
+    envio: 0,
+    precioTotal:0,    
   })
 
     return (
@@ -45,11 +46,11 @@ function App() {
           <Route exact path="/detalle/:productoid">
             <ContenedorDetalles />
           </Route>
-      
           <Route path="*">
                 <Error404/> 
                 {/* VER BIEN QUE ME SALTE CUANDO ES UNA RUTA INCORRECTA  */}
           </Route>
+      
         </Switch>
         {/* <Footer/> */}
       </BrowserRouter>

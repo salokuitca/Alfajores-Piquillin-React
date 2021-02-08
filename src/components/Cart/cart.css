@@ -1,6 +1,7 @@
 
 .carrito {
-    padding: 100px
+    padding: 100px;
+    
 }
 
 .carrito-vacio {
@@ -40,5 +41,28 @@
     margin-top: 100px;
     position: fixed;
     top:-5%;
-    background-color: rgb(216, 215, 215);
+    background-color: rgb(245, 243, 243);
+    padding: 20px
+  }
+
+  
+
+  @media only screen and (max-width: 426px) {
+    .abierto{
+      width: 300px;
+    }
+    .carrito {
+      padding-bottom:0;
+      padding-left:0;
+      padding-right:0;
+    }
+    
+    .descripcion-pdto-encarrito,
+        .lugar-de-envio {
+            font-size: smaller;
+        }
+
+        .descripcion-pdto-encarrito {
+            font-weight: bold;
+        }
   }

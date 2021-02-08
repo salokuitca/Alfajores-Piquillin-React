@@ -10,7 +10,7 @@ function CardProducto ({producto, id}) {
 
     return (
     
-     <div className="card mb-4 producto">
+     <div className="card mb-4 producto shadow">
                 <div><img src={producto.imagen} alt={producto.descripcion} title={producto.nombre} className="card-img-top"/>
                     </div>
                 <div className="align-items-center card-body "> <strong>{producto.nombre}</strong>
@@ -23,7 +23,7 @@ function CardProducto ({producto, id}) {
                 </div>
 
                 <BotonesCantidad item={producto} id={id}/>
-                <Link to={`/detalle/${id}`}>Ver más</Link>
+                <Link to={`/detalle/${id}`} className="btn btn-group btn-light d-flex justify-content-center">Ver más</Link>
                 
             </div> 
     

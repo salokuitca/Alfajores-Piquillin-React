@@ -7,7 +7,7 @@
 }
 
 .contenedor-cards {
-    padding-top: 200px;
+    padding-top: 50px;
 }
 
 .precio {
@@ -17,6 +17,7 @@
 
 .productos-destacados {
     padding-top: 100px;
+    font-size:x-large;
 }
 
 .detalles {

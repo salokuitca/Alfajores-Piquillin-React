@@ -30,6 +30,7 @@ const CategoriasContenedor = () => {
 
     useEffect ( () => {
         getProductsFromDb();
+        //eslint-disable-next-line
     }, [])
     console.log (items)
     const filtro = items.filter ((product) => {

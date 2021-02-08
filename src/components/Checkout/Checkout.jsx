@@ -6,6 +6,7 @@ import firebase from 'firebase/app'
 import CompraProcesada from './CompraProcesada';
 
 import "./checkout.css";
+import ResumenCompra from './ResumenCompra';
 
 const Checkout = () => {
     const db = getFirestore();
@@ -29,14 +30,12 @@ const Checkout = () => {
     const handleChangeInput = (e) => {
         setFormData ({...formData, [e.target.name]: e.target.value })
     } 
-    let precioTotal=0;
-    data.items.forEach((item) => {
-        precioTotal = precioTotal + (item.cantidadUsuario * item.precio);
-    }) //FALTARIA EL ENVIO AHORA!
+    
+    
     const compra = {
         usuario: formData,
         items: data.items,
-        precioTotal: precioTotal,
+        precioTotal: data.precioTotal,
         fecha: firebase.firestore.Timestamp.fromDate(new Date()),
     }
     
@@ -55,6 +54,13 @@ const Checkout = () => {
             setIdCompra (id);
         })
         .catch (e => console.log (e))
+
+        setData({
+            items:[],
+            cantidadTotal:0,
+            envio: 0,
+            precioTotal:0,
+        })
     }
     console.log (idCompra)
     console.log (compra)
@@ -65,7 +71,25 @@ const Checkout = () => {
             verificar ? 
         
         <div className="container checkout">
+
+            <div className="form-group shadow-sm rounded-lg">
+            <div className="card-header">
+                <h5 className="pl-4 ">Resumen de la Compra</h5>
+            </div>
             
+                {
+                    data.items.map (item => 
+                       <ResumenCompra 
+                       key = {item.nombre}
+                       compra={item}
+                       />
+                    )
+                }
+                <div className="d-flex justify-content-around">
+                <strong>Envio: ${data.envio}</strong>
+               <strong>Total: ${data.precioTotal}</strong>
+               </div>
+            </div>
             <form onSubmit={handleSubmitForm} className="">
             
             <div className="form-group shadow-sm rounded-lg">

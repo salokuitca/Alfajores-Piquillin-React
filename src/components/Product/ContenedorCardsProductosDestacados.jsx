@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import {getFirestore} from '../../db';
 
 import CardProducto from './CardProducto';
+import Footer from '../global/Footer'
 import ItemListContainer from './ItemListContainer';
 
 import './productos.css';
@@ -27,22 +28,26 @@ const ProductosDesdeBaseDeDatos = () => {
     useEffect(() => {
         
         getProductsFromDB();
+        //eslint-disable-next-line
     }, [])
     
     const filtro = items.filter ((product) => {
         
         return product.data.destacado === true;
     })
+
+    
     
     return (
         
         <>
-
-        <div className="productos-destacados d-flex justify-content-center">PRODUCTOS DESTACADOS</div>
+        <h1 className="productos-destacados d-flex justify-content-center">PRODUCTOS DESTACADOS</h1>
+        {
+            filtro.length ?
+        <>
         <ItemListContainer>
             {
-                filtro.length ?
-
+                
                 filtro.map ((item) => {
                     
                     
@@ -51,14 +56,18 @@ const ProductosDesdeBaseDeDatos = () => {
                     id = {item.id}
                     />)
                 })
-                :
-                <p>Cargando Productos...</p>
                 
-            }
-
-          
+                
+                
+            } 
+             
         </ItemListContainer>
-
+        <Footer/>
+        </>
+            :
+            <p className="d-flex justify-content-center">Cargando Productos...</p>
+        }
+        
         
         </>
     )

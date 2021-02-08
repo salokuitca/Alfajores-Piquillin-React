@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import '@firebase/firestore';
 
 const app = firebase.initializeApp ({
-    apiKey: "AIzaSyDVac3rKiKTk-zil1stf9O4sygj0NrKYXc",
+  apiKey: process.env.API_KEY,
   authDomain: "piquillinreact.firebaseapp.com",
   projectId: "piquillinreact",
   storageBucket: "piquillinreact.appspot.com",

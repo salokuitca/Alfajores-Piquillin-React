@@ -1,4 +1,4 @@
-import {useContext, useState} from 'react';
+import {useContext, useState, useEffect} from 'react';
 import {useHistory, Link} from 'react-router-dom';
 import {Store} from '../../store';
 
@@ -6,10 +6,14 @@ import CartVacio from './CartVacio';
 import LineaCart from './LineaCart'
 
 import "./cart.css";
+import Checkout from '../Checkout/Checkout';
+
+
 
 
 
 const Cart = () => {
+    
     const [data, setData] = useContext(Store);
     const history = useHistory();
     const [envio, setEnvio] = useState(80);
@@ -24,24 +28,39 @@ const Cart = () => {
     }
 
     const elegirEnvio = (e) => {
-        setEnvio(e.target.value)
-        
+        setEnvio(e.target.value)          
     }
     console.log (envio)
     const redireccionar = () => {
         history.push("/")
     }
-    let precioTotal = parseInt(envio);
-    data.items.forEach((item) => {
-        precioTotal = precioTotal + (item.cantidadUsuario * item.precio); 
-        //HBRIA QUE PONERLO EN EL CONTEXT PARA QUE ESTE EL PRECIO TOTAL MAS ENVIO EN EL CHECKOUT
-    })
-    
+
+    const sumTotal = (cart, envio) => {
+        let total = cart.reduce((t, product) => t += (product.precio * product.cantidadUsuario), 0).toFixed(2);
+        return Number(total) + Number(envio)
+    }
+
+    // let precioTotal=0;
+    // data.items.forEach((item) => {
+    //     precioTotal = precioTotal + (item.cantidadUsuario * item.precio);
+    // })
+
+    // let total = Number(precioTotal) + Number(envio)
+
+    useEffect(() => {
+        setData ({
+            ...data, 
+            envio: envio,
+            precioTotal:sumTotal(data.items, envio),
+        })
+    },[data.items, envio])
+
+    console.log (data.envio, data.precioTotal)
 
     return (
         <>
         
-        <div className="carrito">
+            <div className="carrito">
             {data.items.length ? 
 
             
@@ -73,7 +92,7 @@ const Cart = () => {
                 </div>
                 <div className="col-5 text-center">
                     <strong>Total: </strong>
-                    <strong>{precioTotal}</strong>
+                    <strong>{sumTotal(data.items, envio)}</strong>
                 </div>
             </div>
         </div>
@@ -88,11 +107,11 @@ const Cart = () => {
                 <button onClick={eliminarTodo} className="btn btn-lg btn-block btn-light shadow-sm rounded-pill m-2">Eliminar</button>
                 </div>
                 <div className="col-sm-12 col-md-6 text-right">
-                   <Link to={"/checkout"}><button className="btn btn-lg btn-block btn-warning text-uppercase shadow-sm rounded-pill pagar m-2"
-                    data-toggle="modal" data-target="#staticBackdrop">comprar</button></Link> 
+                  <Link to={"/checkout"}><button className="btn btn-lg btn-block btn-warning text-uppercase shadow-sm rounded-pill pagar m-2"
+                    data-toggle="modal" data-target="#staticBackdrop">comprar</button></Link>
                 </div>
             </div>
-        
+           
         </>
 
         : 
@@ -101,8 +120,14 @@ const Cart = () => {
          <CartVacio/>
         </>
         }
+        
     </div>
+          
             
+            
+        
+       
+        
             
         
         
