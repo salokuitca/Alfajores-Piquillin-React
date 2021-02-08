@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Alfajores Piquillín
+## Un proyecto de Salomé Kuitca para el curso de Reactjs para Coderhouse.
+Es un e-commerce para un emprendimiento local de venta de alfajores, bombones y delicatessen.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Links
+ACA VA EL LINK DE LA PAGINA SUBIDA
 
-## Available Scripts
+## Organización del código
+Los componentes están organizados por carpetas correspondiendo a la parte del programa que responden. En ese sentido, se encuentran divididos en 5 grandes grupos (Cart, Categorías, Checkout, global, Product). En cada uno de ellos, se encontrará un archivo .css donde están los estilos asignados para sus componentes. En cada uno de los grupos se encontrarán los componentes que los conforman. Se tratan de componentes de función y no de clase.
 
-In the project directory, you can run:
+## npm
+Para este proyecto es necesario utilizar npm. La versión utilizada es la 12.18.4
+Para poder ejecutar el programa se debe utilizar el comando `npm start`.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## React
+Se utiliza la versión de Reactjs 17.0.1. 
+Se importan los siguientes hooks para el funcionamiento del programa:
+    * useState
+    * useEffect
+    * useContext
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## React-router-dom
+Para el funcionamiento de las rutas y navegación del programa, se implementó React-router-dom versión 5.2.0. Se importó lo siguiente:
+    * Link
+    * useHistory
+    * useParams
+  
+## Firebase
+Se utiliza Firestore como repositorio para la base de datos. Consta de dos colecciones: productos y ventas.
 
-### `npm test`
+## Estilos
+### Bootstrap
+Los estilos de CSS de esta página son principalmente hechos con Bootstrap 4.6.x importado mediante CDN. 
+Componentes que se utilizan: 
+  * Navbar
+  * Cards
+  * Forms
+  * Inputs
+  * Buttons
+  * Badge
+  * Sistema de Layouts
+Guía de colores utilizados: warning (botones principales), success (botón pagar), light (botones carrito), dark (botones cards)
+### CSS3
+Algunos de los estilos fueron moldeados con CSS3 a través de selectores de clases. Para seguir la coherencia de las clases de bootstrap, las clases son denominadas con dash-case en vez de camelCase. 
+  
+## camelCase
+El programa utiliza mayormente camelCase, a excepción de las clases utilizadas en CSS3 por los motivos ya explicados.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
