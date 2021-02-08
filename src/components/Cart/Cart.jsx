@@ -7,11 +7,6 @@ import LineaCart from './LineaCart'
 
 import "./cart.css";
 
-
-
-
-
-
 const Cart = () => {
     
     const [data, setData] = useContext(Store);
@@ -39,13 +34,6 @@ const Cart = () => {
         let total = cart.reduce((t, product) => t += (product.precio * product.cantidadUsuario), 0).toFixed(2);
         return Number(total) + Number(envio)
     }
-
-    // let precioTotal=0;
-    // data.items.forEach((item) => {
-    //     precioTotal = precioTotal + (item.cantidadUsuario * item.precio);
-    // })
-
-    // let total = Number(precioTotal) + Number(envio)
 
     useEffect(() => {
         setData ({
@@ -77,61 +65,52 @@ const Cart = () => {
                 
             }
 
-        <div className="barra my-3">
-            <div className="row border-bottom d-flex align-items-center mx-1 rounded-lg shadow-sm py-3 bg-light">
-                <div className="col-7 lugar-de-envio d-flex justify-content-around flex-wrap  ">
-                    <div className="pb-1"> Seleccione Lugar de Envío</div>
-                    <select onChange={elegirEnvio} className="rounded" required>
-                        
-                        <option value="80" id="VGB">Villa Gral Belgrano ($80)</option>
-                        <option value="50" id="VR">Villa Rumipal ($50)</option>
-                        <option value="70" id="SRC">Sta Rosa Calamuchita ($70)</option>
-                        <option value="60" id="VDD">Villa del Dique ($60)</option>
-                    </select>
-                    <div className="invalid-feedback"></div>
-                </div>
-                <div className="col-5 text-center">
-                    <strong>Total: </strong>
-                    <strong>{sumTotal(data.items, envio)}</strong>
-                </div>
-            </div>
-        </div>
-
-            <div className="row ">
-                <div className="col-sm-12  col-md-3 ">
-                    <span onClick={redireccionar} className="text-decoration-none ">
-                        <button className="btn btn-lg btn-block btn-light shadow-sm rounded-pill m-2">Volver</button>
-                     </span>
+                <div className="barra my-3">
+                    <div className="row border-bottom d-flex align-items-center mx-1 rounded-lg shadow-sm py-3 bg-light">
+                        <div className="col-7 lugar-de-envio d-flex justify-content-around flex-wrap  ">
+                            <div className="pb-1"> Seleccione Lugar de Envío</div>
+                            <select onChange={elegirEnvio} className="rounded" required>
+                                
+                                <option value="80" id="VGB">Villa Gral Belgrano ($80)</option>
+                                <option value="50" id="VR">Villa Rumipal ($50)</option>
+                                <option value="70" id="SRC">Sta Rosa Calamuchita ($70)</option>
+                                <option value="60" id="VDD">Villa del Dique ($60)</option>
+                            </select>
+                            <div className="invalid-feedback"></div>
+                        </div>
+                        <div className="col-5 text-center">
+                            <strong>Total: </strong>
+                            <strong>{sumTotal(data.items, envio)}</strong>
+                        </div>
                     </div>
-                <div className="col-sm-12 col-md-3">
-                <button onClick={eliminarTodo} className="btn btn-lg btn-block btn-light shadow-sm rounded-pill m-2">Eliminar</button>
                 </div>
-                <div className="col-sm-12 col-md-6 text-right">
-                  <Link to={"/checkout"}><button className="btn btn-lg btn-block btn-warning text-uppercase shadow-sm rounded-pill pagar m-2"
-                    data-toggle="modal" data-target="#staticBackdrop">comprar</button></Link>
+
+                <div className="row ">
+                    <div className="col-sm-12  col-md-3 ">
+                        <span onClick={redireccionar} className="text-decoration-none ">
+                            <button className="btn btn-lg btn-block btn-light shadow-sm rounded-pill m-2">Volver</button>
+                        </span>
+                    </div>
+                    <div className="col-sm-12 col-md-3">
+                        <button onClick={eliminarTodo} className="btn btn-lg btn-block btn-light shadow-sm rounded-pill m-2">Eliminar</button>
+                    </div>
+                    <div className="col-sm-12 col-md-6 text-right">
+                        <Link to={"/checkout"}><button className="btn btn-lg btn-block btn-warning text-uppercase shadow-sm rounded-pill pagar m-2"
+                        data-toggle="modal" data-target="#staticBackdrop">comprar</button></Link>
+                    </div>
                 </div>
-            </div>
-           
+            
         </>
 
-        : 
-        <>
-        
-         <CartVacio/>
-        </>
+            : 
+                <>
+                    <CartVacio/>
+                </>
         }
         
-    </div>
-          
-            
-            
-        
-       
-        
-            
-        
-        
-        </>
+    </div>    
+  
+    </>
     )
 }
 

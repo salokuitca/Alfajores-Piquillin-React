@@ -9,7 +9,7 @@ import CartVacio from './CartVacio';
 function CartWidget({clase}) {
     
     const history = useHistory();
-    const [data] = useContext(Store); //Antes tenia tambien un setData pero me parece que no hace falta VER
+    const [data] = useContext(Store); 
     
 
     const redireccionar = () => {

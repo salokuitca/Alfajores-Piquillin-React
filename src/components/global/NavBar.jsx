@@ -1,15 +1,15 @@
 import {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
-import iconoCarrito from '../../assets/cart.svg';
-// import {getFirestore} from '../../db';
 import {Store} from "../../store";
+
+import iconoCarrito from '../../assets/cart.svg';
 import logoMenu from '../../assets/logosolo.svg';
 
 import CartWidget from '../Cart/CartWidget';
 import './global.css'
 
 const NavBar = () => {
-    const [data] = useContext(Store); //Antes tenia tambien un setData pero me parece que no hace falta VER
+    const [data] = useContext(Store); 
     
     const [show, setShow] = useState(false)
     
@@ -42,7 +42,6 @@ const NavBar = () => {
                             Productos
                         </Link>
                     </li>
-                    {/* Una vez tenga determinadas las categorías, rehacer el navbar y sacar las a por Link */}
                     <li className="nav-item">
                         <Link to={"/Alfajor"} className="nav-link" >Alfajores</Link>
                     </li>
@@ -59,7 +58,6 @@ const NavBar = () => {
             </div>
             <div className="cart-div">
                 <span><img src={iconoCarrito} alt="icono carrito" className="cart" onClick={mostrar}/></span>
-                {/* Por el momento aparecera 0 pero luego sera reemplazado por un contador de productos elegidos */}
                 <span className="badge badge-pill badge-dark" >{data.cantidadTotal}</span>
             </div>
         </div>

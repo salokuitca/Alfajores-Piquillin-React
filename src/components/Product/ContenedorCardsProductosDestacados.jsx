@@ -13,11 +13,11 @@ const ProductosDesdeBaseDeDatos = () => {
     const db = getFirestore();
 
     const getProductsFromDB = () => {
-        db.collection('productos').get() //trae toda la coleccion
+        db.collection('productos').get() 
         .then( docs => {
             let arr = [];
             docs.forEach(doc => {
-                arr.push({id: doc.id, data: doc.data()}) //el data trae por documento
+                arr.push({id: doc.id, data: doc.data()}) 
             })
             
             setItems (arr);

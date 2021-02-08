@@ -12,7 +12,7 @@ const Checkout = () => {
     const db = getFirestore();
     const [idCompra, setIdCompra] = useState();
     const [data, setData] = useContext(Store);
-    const [error, setError] = useState(false);
+    // const [error, setError] = useState(false);
     const [verificar, setVerificar] = useState (true);
     const [formData, setFormData] = useState ({
         nombre: '',
@@ -43,11 +43,7 @@ const Checkout = () => {
         
         setVerificar (false)
         e.preventDefault()
-        // if([nombre,apellido,email,telefono].includes(''))
-        //  { setError(true); 
-        //     return; 
-        // }
-        setError(false)
+        // setError(false)
         db.collection('ventas').add(compra)
         .then (({id}) => {
             console.log (id);

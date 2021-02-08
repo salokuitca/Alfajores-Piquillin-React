@@ -1,14 +1,10 @@
 import {useState, useContext} from 'react';
-// import {useHistory} from 'react-router-dom';
 import {Store} from '../../store';
 
 const BotonesCantidad = ({item, id}) => {
     const [data, setData] = useContext(Store);
 
-    const [cantidad, setCantidad] = useState (0);
-    // const history = useHistory();
-
-    
+    const [cantidad, setCantidad] = useState (0); 
 
     const sumar = () => {
         setCantidad (cantidad + 1);
@@ -21,9 +17,6 @@ const BotonesCantidad = ({item, id}) => {
     }
     
     const agregarAlCart = () => {
-        
-        // AGREGAR ANIMACION PARA QUE SE NOTE QUE SE AGREGO ALGO AL CART
-        // item.cantidadUsuario = cantidad;
         
         const nombreComprobar = item.nombre;
         
@@ -50,8 +43,6 @@ const BotonesCantidad = ({item, id}) => {
                 items: [...data.items, item],
             })
         }
-        
-        // history.push("/cart");
         
     }
     return (
