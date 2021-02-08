@@ -23,7 +23,6 @@ const LineaCart = ({item}) => {
         cantidadTotal: actualizarCantidad, 
         items: filtro
         })
-        console.log (data)
     }
     return (
         <>

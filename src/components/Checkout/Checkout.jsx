@@ -12,7 +12,6 @@ const Checkout = () => {
     const db = getFirestore();
     const [idCompra, setIdCompra] = useState();
     const [data, setData] = useContext(Store);
-    // const [error, setError] = useState(false);
     const [verificar, setVerificar] = useState (true);
     const [formData, setFormData] = useState ({
         nombre: '',
@@ -43,10 +42,9 @@ const Checkout = () => {
         
         setVerificar (false)
         e.preventDefault()
-        // setError(false)
         db.collection('ventas').add(compra)
         .then (({id}) => {
-            console.log (id);
+            
             setIdCompra (id);
         })
         .catch (e => console.log (e))
@@ -58,9 +56,6 @@ const Checkout = () => {
             precioTotal:0,
         })
     }
-
-    console.log (idCompra)
-    console.log (compra)
 
     return (
         <>

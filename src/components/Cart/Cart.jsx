@@ -19,13 +19,13 @@ const Cart = () => {
             items: [],
             cantidadTotal:0,
         })
-        console.log (data)
+        
     }
 
     const elegirEnvio = (e) => {
         setEnvio(e.target.value)          
     }
-    console.log (envio)
+    
     const redireccionar = () => {
         history.push("/")
     }
@@ -41,9 +41,10 @@ const Cart = () => {
             envio: envio,
             precioTotal:sumTotal(data.items, envio),
         })
+        //eslint-disable-next-line
     },[data.items, envio])
 
-    console.log (data.envio, data.precioTotal)
+    
 
     return (
         <>

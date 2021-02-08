@@ -26,7 +26,7 @@ const BotonesCantidad = ({item, id}) => {
             
             if (nombreComprobar === item.nombre) {
                 item.cantidadUsuario = item.cantidadUsuario + cantidad;
-                console.log (item.cantidadUsuario)
+                
                 setData ({
                     ...data, 
                     cantidadTotal: data.cantidadTotal + cantidad,

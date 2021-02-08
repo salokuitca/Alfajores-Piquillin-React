@@ -22,7 +22,7 @@ const CategoriasContenedor = () => {
             docs.forEach(doc => {
                 arr.push ({id: doc.id, data: doc.data()})
             })
-            console.log (arr)
+            
             setItems (arr);
         })
         .catch (e => console.log (e));
@@ -32,12 +32,12 @@ const CategoriasContenedor = () => {
         getProductsFromDb();
         //eslint-disable-next-line
     }, [])
-    console.log (items)
+    
     const filtro = items.filter ((product) => {
-        console.log (product.data.categoria)
+        
         return product.data.categoria === categoria;
     })
-    console.log (filtro + categoria)
+    
 
     return (
         <>
