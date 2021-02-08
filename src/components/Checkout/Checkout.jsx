@@ -62,6 +62,7 @@ const Checkout = () => {
             precioTotal:0,
         })
     }
+
     console.log (idCompra)
     console.log (compra)
 
@@ -145,7 +146,7 @@ const Checkout = () => {
                 </div>
             </div>
 
-            <button type="submit" className="btn btn-lg btn-block btn-success text-uppercase shadow-sm rounded-pill m-2">Pagar</button>
+            <button type="submit" className="btn btn-lg btn-block btn-success text-uppercase shadow-sm rounded-pill m-2" disabled={data.precioTotal===0 ? 'disabled':null}>Pagar</button>
             </form>
         </div>
         : 

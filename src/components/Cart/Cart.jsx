@@ -6,7 +6,7 @@ import CartVacio from './CartVacio';
 import LineaCart from './LineaCart'
 
 import "./cart.css";
-import Checkout from '../Checkout/Checkout';
+
 
 
 
@@ -60,7 +60,7 @@ const Cart = () => {
     return (
         <>
         
-            <div className="carrito">
+            <div className="container carrito">
             {data.items.length ? 
 
             

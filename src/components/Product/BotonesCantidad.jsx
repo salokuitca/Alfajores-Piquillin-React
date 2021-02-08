@@ -23,7 +23,7 @@ const BotonesCantidad = ({item, id}) => {
     const agregarAlCart = () => {
         
         // AGREGAR ANIMACION PARA QUE SE NOTE QUE SE AGREGO ALGO AL CART
-        item.cantidadUsuario = cantidad;
+        // item.cantidadUsuario = cantidad;
         
         const nombreComprobar = item.nombre;
         
@@ -33,6 +33,7 @@ const BotonesCantidad = ({item, id}) => {
             
             if (nombreComprobar === item.nombre) {
                 item.cantidadUsuario = item.cantidadUsuario + cantidad;
+                console.log (item.cantidadUsuario)
                 setData ({
                     ...data, 
                     cantidadTotal: data.cantidadTotal + cantidad,
@@ -41,6 +42,7 @@ const BotonesCantidad = ({item, id}) => {
             }
         })
         if (verificar === false) {
+            item.cantidadUsuario = cantidad
             setData ({
 
                 ...data, 
