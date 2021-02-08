@@ -6,7 +6,9 @@ Es un e-commerce para un emprendimiento local de venta de alfajores, bombones y 
 ACA VA EL LINK DE LA PAGINA SUBIDA
 
 ## Organización del código
-Los componentes están organizados por carpetas correspondiendo a la parte del programa que responden. En ese sentido, se encuentran divididos en 5 grandes grupos (Cart, Categorías, Checkout, global, Product). En cada uno de ellos, se encontrará un archivo .css donde están los estilos asignados para sus componentes. En cada uno de los grupos se encontrarán los componentes que los conforman. Se tratan de componentes de función y no de clase.
+Los componentes están organizados por carpetas correspondiendo a la parte del programa que responden. En ese sentido, se encuentran divididos en 5 grandes grupos (Cart, Categorías, Checkout, global, Product), cada uno de estos contiene:
+* un archivo .css donde están los estilos asignados para sus componentes. Se decidió utilizar un archivo .css por cada grupo de componentes debido a que la mayoría de los estilos son dados con Bootstrap, por lo que el código de CSS es mínimo.
+* Los componentes que los conforman. Se tratan de componentes de función y no de clase.
 
 ## npm
 Para este proyecto es necesario utilizar npm. La versión utilizada es la 12.18.4
